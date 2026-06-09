@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Amor ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,serif;background:linear-gradient(#08111f,#111b34,#1d2747);color:#fff;overflow:hidden}
+.screen{display:none;min-height:100vh;padding:40px;justify-content:center;align-items:center;flex-direction:column;text-align:center}
+.active{display:flex}
+.btn{padding:14px 28px;border:none;border-radius:30px;background:#ff5c8a;color:#fff;cursor:pointer;margin-top:25px}
+.stars{position:fixed;inset:0;z-index:-1}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle 3s infinite}
+@keyframes twinkle{50%{opacity:.2}}
+.envelope{width:260px;height:170px;background:#ead9c7;border-radius:10px;cursor:pointer;position:relative}
+.envelope:before{content:"";position:absolute;left:0;right:0;top:0;border-left:130px solid transparent;border-right:130px solid transparent;border-top:90px solid #d9c5ae}
+.bigstar{font-size:90px;cursor:pointer}
+.msg{max-width:700px;font-size:1.3rem;margin-top:20px}
+.card{background:rgba(255,255,255,.08);padding:35px;border-radius:20px;max-width:900px}
+.counter{font-size:2rem;margin:20px}
+.tu{font-size:2.3rem;font-weight:bold;text-align:center;margin:20px}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<section class="screen active" id="s1">
+<h1>FELIZ CUMPLEAÑOS</h1>
+<h1>AMOR ❤️</h1>
+<p>Hoy cumples 18 años.</p>
+<p>Y aunque la distancia no me permite estar contigo...</p>
+<p>Quise regalarte algo hecho con todo mi corazón.</p>
+<button class="btn" onclick="go('s2')">✨ Comenzar</button>
+</section>
+
+<section class="screen" id="s2">
+<p>Antes de abrir tu regalo...</p>
+<p>Hay algunas cosas que quiero decirte.</p>
+<p>Pero que merecen ser recordadas.</p>
+<div class="envelope" onclick="go('s3')"></div>
+<p>💌 Abrir</p>
+</section>
+
+<section class="screen" id="s3">
+<h2>❤️ Gracias por llegar a mi vida</h2>
+<button class="btn" onclick="startStars()">Continuar</button>
+</section>
+
+<section class="screen" id="starsScreen">
+<div class="bigstar">⭐</div>
+<div class="msg" id="starMsg"></div>
+<button class="btn" onclick="nextStar()">Siguiente estrella</button>
+</section>
+
+<section class="screen" id="s4">
+<h2>⏳ Nuestra Historia</h2>
+<p>Nuestra historia comenzó entre el 29 y el 30 de abril...</p>
+<div class="counter" id="counter"></div>
+<p>No fue el tiempo lo que hizo esto especial.</p>
+<p><strong>Fue la persona con quien lo compartí. ❤️</strong></p>
+<button class="btn" onclick="go('s5')">Continuar</button>
+</section>
+
+<section class="screen" id="s5">
+<p>Entre millones de estrellas...</p>
+<p>Siempre hay una que destaca sobre las demás.</p>
+<div class="bigstar" onclick="showText()">⭐</div>
+<div id="u" style="display:none">
+<p><strong>Entre millones de estrellas, nació una que terminaría convirtiéndose en todo mi universo.</strong></p>
+<p>Cuando pienso en esa frase... pienso en ti. ❤️</p>
+<button class="btn" onclick="go('s6')">Continuar</button>
+</div>
+</section>
+
+<section class="screen" id="s6">
+<p>Hay muchas cosas que podría regalarte.</p>
+<p>Flores, chocolates, cosas bonitas...</p>
+<p>Pero ninguna expresa lo que siento por ti.</p>
+<p><strong>Por eso decidí darte algo más sincero:</strong></p>
+<p>Mis palabras ❤️</p>
+<button class="btn" onclick="go('s7')">💌 Leer mi carta</button>
+</section>
+
+<section class="screen" id="s7">
+<div class="card">
+<h2>Para ti, amor ❤️</h2>
+<br>
+<p>Hoy es tu cumpleaños.</p><br>
+<p>Y aunque me encantaría estar contigo para abrazarte, celebrar a tu lado y verte sonreír en este día tan especial, quiero que estas palabras hagan lo que la distancia no me permite hacer: recordarte lo increíble que eres.</p><br>
+<p>Porque si hay algo que admiro de ti, es tu forma de ser. Tu sensibilidad, tu bondad, tu manera de preocuparte por las personas que quieres y esa hermosa capacidad que tienes de hacer sentir bien a quienes te rodean. Fue precisamente eso lo que me enamoró de ti, tu personalidad. Porque antes de enamorarme de tu belleza, me enamoré de la persona que eres, y mientras más te conozco, más razones encuentro para seguir haciéndolo.</p><br>
+<p>Hay algo que quizás no te digo lo suficiente, y es que te has convertido en una de las personas más importantes de mi vida. Eres la persona que alegra mis días, la persona con la que quiero compartir mis pensamientos, la persona en la que confío y la persona con la que simplemente me gusta estar.</p><br>
+<p>Contigo aprendí que la distancia puede separar dos lugares, pero no dos corazones que realmente quieren estar juntos.</p><br>
+<p>Hoy deseo que seas muy feliz, que sonrías mucho, que cumplas tus sueños y que nunca olvides lo especial que eres. Porque si alguien me preguntara cuál fue el mejor regalo que me dio la vida este año, sin pensarlo dos veces respondería:</p>
+<div class="tu">Tú.</div>
+<p style="text-align:center">Feliz cumpleaños, amor.<br><br><strong>Te amo ❤️</strong><br><br>Oscar</p>
+</div>
+<button class="btn" onclick="go('s8')">Finalizar</button>
+</section>
+
+<section class="screen" id="s8">
+<h1>Gracias por leer hasta el final ❤️</h1>
+<p>Y gracias por formar parte de mi vida.</p>
+<p>Feliz cumpleaños, amor.</p>
+</section>
+
+<script>
+for(let i=0;i<250;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';document.getElementById('stars').appendChild(s);}
+function go(id){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById(id).classList.add('active');}
+const msgs=[
+"Porque contigo aprendí que la distancia no impide sentir cercanía.",
+"Porque cada mensaje tuyo logra alegrar mis días.",
+"Porque siempre encuentro tranquilidad cuando hablo contigo.",
+"Porque tu forma de ser fue lo primero que me enamoró de ti.",
+"Porque no imagino mi presente sin ti."
+];
+let i=0;
+function startStars(){i=0;go('starsScreen');document.getElementById('starMsg').innerText=msgs[i];}
+function nextStar(){i++; if(i<msgs.length){document.getElementById('starMsg').innerText=msgs[i];} else go('s4');}
+function showText(){document.getElementById('u').style.display='block';}
+function upd(){
+const start=new Date('2026-04-30T00:00:00');
+const now=new Date();
+const d=Math.floor((now-start)/86400000);
+document.getElementById('counter').innerText=d+" días juntos";
+}
+setInterval(upd,1000);upd();
+</script>
+</body>
+</html>
